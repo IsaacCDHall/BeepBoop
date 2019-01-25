@@ -1,4 +1,4 @@
-
+var theCount = [];
 
 // user interface logic
 $(document).ready(function(){
@@ -7,9 +7,9 @@ $(document).ready(function(){
     var formInput = parseInt($("input").val());
     console.log(formInput);
     for (var index = 0; index <= formInput; index += 1) {
-      $(".boop").append(index + ", ");
+      theCount.push(index);
     }
 
-
+    $(".boop").text(theCount);
   });
 });
