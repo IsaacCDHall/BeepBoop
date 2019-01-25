@@ -7,7 +7,7 @@ $(document).ready(function(){
     var formInput = parseInt($("input").val());
     console.log(formInput);
     for (var index = 0; index <= formInput; index += 1) {
-      console.log(index);
+      $(".boop").append(index + ", ");
     }
 
 
