@@ -1,15 +1,5 @@
 var theCount = [];
-
-function specifyThrees(input) {
-  if (input % 3 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-
-
+var nameInput;
 function findThrees(num){
   return num.toString().indexOf('3') > -1 //return true or false
 }
@@ -23,28 +13,24 @@ function findOnes(num){
 $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
-    var formInput = parseInt($("input").val());
-    for (var index = 0; index <= formInput; index += 1) {
-      console.log("hello" + index);
-
-      // var result = specifyThrees(index);
-
-      if (findThrees(index)){
-         theCount.push(" not 3");
-      } else if (findTwos(index)){
-         theCount.push(" Boop!");
+    var numInput = parseInt($("input").val());
+    var nameInput = $("#name").val();
+    console.log(nameInput);
+    for (var index = 0; index <= numInput; index += 1) {
+      if (nameInput === "boop"){
+         theCount.unshift(index);
+      }else if (findThrees(index)){
+         theCount.push(" not for you, " + nameInput + '.');
+      }else if (findTwos(index)){
+         theCount.push(" Boop!" );
       }else if (findOnes(index)){
          theCount.push(" Beep!");
       }else {
         theCount.push(index);
       }
-
-    }
+    };
     console.log(theCount);
-    // replaceOnes(theCount.toString());
-    // replaceTwos(noOnes);
-    // replaceThrees(noTwos);
-
-    $(".boop").text(theCount);
+    $(".boop").text(theCount.join(' '));
+    $(".hidden").show();
   });
 });
