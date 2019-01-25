@@ -1,12 +1,12 @@
 var theCount = [];
-var findOne = theCount.indexOf(1);
+
 var findTwo = theCount.indexOf(2);
 var findThree = theCount.indexOf(3);
-var x;
-
-var contains = function (haystack, needle) {
-    return !!~haystack.indexOf(needle);
-};
+// var x = "0";
+// var z = [];
+// function find(haystack, needle) {
+//     return !!~haystack.indexOf(needle);
+// };
 
 
 
@@ -18,12 +18,12 @@ $(document).ready(function(){
     var formInput = parseInt($("input").val());
     console.log(formInput);
     for (var index = 0; index <= formInput; index += 1) {
+      var findOne = theCount.indexOf(1);
       theCount.push(index);
       if (findOne !== -1) {
-        return theCount[findOne] = "99";
+        theCount[findOne] = "please change";
       }
     }
-    console.log(x);
     $(".boop").text(theCount);
   });
 });
