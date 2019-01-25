@@ -1,13 +1,5 @@
 var theCount = [];
-function replaceOnes(str){
-	return noOnes = str.replace(/1/g, " Beep!");
-}
-function replaceTwos(str){
-	return noTwos = str.replace(/2/g, " Boop!");
-}
-var replaceThrees = function(str){
-	return noThrees = str.replace(/3/g, " I'm sorry Isaac. I can't do that");
-}
+
 function specifyThrees(input) {
   if (input % 3 === 0) {
     return true;
@@ -17,6 +9,16 @@ function specifyThrees(input) {
 };
 
 
+
+function findThrees(num){
+  return num.toString().indexOf('3') > -1 //return true or false
+}
+function findTwos(num){
+  return num.toString().indexOf('2') > -1 //return true or false
+}
+function findOnes(num){
+  return num.toString().indexOf('1') > -1 //return true or false
+}
 // user interface logic
 $(document).ready(function(){
   $("form").submit(function(event){
@@ -25,20 +27,24 @@ $(document).ready(function(){
     for (var index = 0; index <= formInput; index += 1) {
       console.log("hello" + index);
 
-      var result = specifyThrees(index);
+      // var result = specifyThrees(index);
 
-        if ((result === true) && (index !== 0)){
-           theCount.push("not 3")
-        } else{
-          theCount.push(index);
-        }
+      if (findThrees(index)){
+         theCount.push(" not 3");
+      } else if (findTwos(index)){
+         theCount.push(" Boop!");
+      }else if (findOnes(index)){
+         theCount.push(" Beep!");
+      }else {
+        theCount.push(index);
+      }
 
     }
     console.log(theCount);
-    replaceOnes(theCount.toString());
-    replaceTwos(noOnes);
-    replaceThrees(noTwos);
+    // replaceOnes(theCount.toString());
+    // replaceTwos(noOnes);
+    // replaceThrees(noTwos);
 
-    $(".boop").text(noThrees);
+    $(".boop").text(theCount);
   });
 });
