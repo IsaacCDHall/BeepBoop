@@ -17,20 +17,20 @@ $(document).ready(function(){
     var nameInput = $("#name").val();
     console.log(nameInput);
     for (var index = 0; index <= numInput; index += 1) {
-      if (nameInput === "boop"){
-         theCount.unshift(index);
-      }else if (findThrees(index)){
-         theCount.push(" not for you, " + nameInput + '.');
-      }else if (findTwos(index)){
-         theCount.push(" Boop!" );
+      if (findThrees(index)){
+        theCount.push(" not for you, " + nameInput + '.');
+      } else if (findTwos(index)){
+        theCount.push(" Boop!" );
       }else if (findOnes(index)){
-         theCount.push(" Beep!");
+        theCount.push(" Beep!");
       }else {
         theCount.push(index);
       }
     };
+    if (nameInput === "boop"){
+      theCount.reverse();
+    };
     console.log(theCount);
     $(".boop").text(theCount.join(' '));
-    $(".hidden").show();
   });
 });
