@@ -1,4 +1,15 @@
 var theCount = [];
+var findOne = theCount.indexOf(1);
+var findTwo = theCount.indexOf(2);
+var findThree = theCount.indexOf(3);
+var x;
+
+var contains = function (haystack, needle) {
+    return !!~haystack.indexOf(needle);
+};
+
+
+
 
 // user interface logic
 $(document).ready(function(){
@@ -8,8 +19,18 @@ $(document).ready(function(){
     console.log(formInput);
     for (var index = 0; index <= formInput; index += 1) {
       theCount.push(index);
+      if (findOne !== -1) {
+        return theCount[findOne] = "99";
+      }
     }
-
+    console.log(x);
     $(".boop").text(theCount);
   });
 });
+
+
+
+// Ideas for changing numbers:
+//   Change theCount toString and then .replace(1|2|3)
+//   indexOf check, replace
+//   needle in haystack find
