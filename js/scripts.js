@@ -1,7 +1,5 @@
 var theCount = [];
 
-var findTwo = theCount.indexOf(2);
-var findThree = theCount.indexOf(3);
 // var x = "0";
 // var z = [];
 // function find(haystack, needle) {
@@ -16,13 +14,18 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
     var formInput = parseInt($("input").val());
-    console.log(formInput);
     for (var index = 0; index <= formInput; index += 1) {
       var findOne = theCount.indexOf(1);
-      theCount.push(index);
-      if (findOne !== -1) {
-        theCount[findOne] = "please change";
+      var findTwo = theCount.indexOf(2);
+      var findThree = theCount.indexOf(3);
+      if (findThree !== -1) {
+        theCount[findThree] = " I'm Sorry, Isaac. I'm afraid I can't do that";
+      } else if (findTwo !== -1) {
+        theCount[findTwo] = " Boop!";
+      } else if (findOne !== -1) {
+        theCount[findOne] = " Beep!";
       }
+      theCount.push(index);
     }
     $(".boop").text(theCount);
   });
