@@ -24,12 +24,14 @@ $(document).ready(function(){
     var formInput = parseInt($("input").val());
     for (var index = 0; index <= formInput; index += 1) {
       console.log("hello" + index);
-      theCount.push(index);
+
       var result = specifyThrees(index);
 
-      if (result === true){
-
-      }
+        if ((result === true) && (index !== 0)){
+           theCount.push("not 3")
+        } else{
+          theCount.push(index);
+        }
 
     }
     console.log(theCount);
