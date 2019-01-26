@@ -11,11 +11,22 @@ function findOnes(num){
 }
 // user interface logic
 $(document).ready(function(){
+  $('button').on('click',function(){
+    $('.boop').addClass('animated slideInUp');
+    $('div.top').addClass('animated fadeOut');
+  });
+
   $("form").submit(function(event){
+    // $("div").animate({
+    //    right: '200px',
+    //    opacity: '0.9',
+    //    width: '300px',
+    //    fontSize: '20px'
+    //  });
     event.preventDefault();
     var numInput = parseInt($("input").val());
     var nameInput = $("#name").val();
-    console.log(nameInput);
+    $("#easteregg").hide();
     for (var index = 0; index <= numInput; index += 1) {
       if (findThrees(index)){
         theCount.push(" not for you, " + nameInput + '.');
@@ -27,10 +38,12 @@ $(document).ready(function(){
         theCount.push(index);
       }
     };
-    if (nameInput === "boop"){
+    if (nameInput.toLowerCase() === "boop"){
+      nameInput = "bOoP!!"
+      $('body').addClass("booped");
+      $("#easteregg").show();
       theCount.reverse();
     };
-    console.log(theCount);
     $(".boop").text(theCount.join(' '));
   });
 });
