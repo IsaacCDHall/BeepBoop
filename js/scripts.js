@@ -17,12 +17,6 @@ $(document).ready(function(){
   });
 
   $("form").submit(function(event){
-    // $("div").animate({
-    //    right: '200px',
-    //    opacity: '0.9',
-    //    width: '300px',
-    //    fontSize: '20px'
-    //  });
     event.preventDefault();
     var numInput = parseInt($("input").val());
     var nameInput = $("#name").val();
