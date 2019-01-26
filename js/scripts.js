@@ -23,7 +23,7 @@ $(document).ready(function(){
     $("#easteregg").hide();
     for (var index = 0; index <= numInput; index += 1) {
       if (findThrees(index)){
-        theCount.push(" not for you, " + nameInput + '.');
+        theCount.push(" I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
       } else if (findTwos(index)){
         theCount.push(" Boop!" );
       }else if (findOnes(index)){
